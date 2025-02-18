@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        .quote-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            max-width: 500px;
+        }
+        .quote {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: blue;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quote-box">
+        <h2>Random Quote Generator</h2>
+        <p class="quote">Click the button to get a new quote!</p>
+        <button class="btn" onclick="generateQuote()">New Quote</button>
+    </div>
+
+    <script>
+        const quotes = [
+            "The best way to predict the future is to create it.",
+            "Success is not the key to happiness. Happiness is the key to success.",
+            "Don’t watch the clock; do what it does. Keep going.",
+            "Believe you can and you're halfway there.",
+            "Dream big and dare to fail."
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.querySelector(".quote").textContent = quotes[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
